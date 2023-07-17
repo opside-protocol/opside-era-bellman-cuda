@@ -150,6 +150,8 @@ bc_error bc_device_disable_peer_access(int device_id);
 // device_id - Peer device to enable direct access to
 bc_error bc_device_enable_peer_access(int device_id);
 
+bc_error bc_device_can_access_peer(int *peer_access_available, int device, int peerDevice);
+
 // Copies data between host and device.
 // dst - Destination memory address
 // src - Source memory address

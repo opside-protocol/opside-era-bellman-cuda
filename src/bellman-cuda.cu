@@ -67,6 +67,8 @@ bc_error bc_device_disable_peer_access(const int device_id) { return static_cast
 
 bc_error bc_device_enable_peer_access(const int device_id) { return static_cast<bc_error>(cudaDeviceEnablePeerAccess(device_id, 0)); }
 
+bc_error bc_device_can_access_peer(int *peer_access_available, int device, int peerDevice) { return static_cast<bc_error>(cudaDeviceCanAccessPeer(peer_access_available, device, peerDevice)); }
+
 bc_error bc_memcpy(void *dst, const void *src, size_t count) { return static_cast<bc_error>(cudaMemcpy(dst, src, count, cudaMemcpyDefault)); }
 
 bc_error bc_memcpy_async(void *dst, const void *src, size_t count, bc_stream stream) {
